@@ -1,42 +1,31 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import React from 'react';
+import styled from 'styled-components';
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+const HeaderStyles = styled.header`
+  width: 100%;
+  max-width: ${props => props.theme.maxWidth};
+  margin: auto;
+  height: 10rem;
+  padding: 3rem;
+  background: #fafafa;
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+  input {
+    height: 4rem;
+    width: 100%;
+    padding: 2rem;
+    border: none;
+    background: #fafafa;
+    border: 1px solid #e2e2e2;
+  }
+`;
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
+const Header = () => (
+  <HeaderStyles>
+    <input
+      type="text"
+      placeholder="Search for a recipe by title, creator, or meal type (breakfast, lunch, etc.)"
+    />
+  </HeaderStyles>
+);
 
-export default Header
+export default Header;

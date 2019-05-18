@@ -1,21 +1,58 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import RecipeListing from '../components/recipeListing';
+import H1Gradient from '../styles/h1-gradient';
+import Separator from '../styles/separator';
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+const IndexPageStyles = styled.div`
+  h1 {
+    padding-top: 0;
+    margin-top: 0;
+  }
+`;
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <IndexPageStyles>
+      <H1Gradient>Family Recipes</H1Gradient>
+      <Separator />
+      {data.allMarkdownRemark.edges.map(({ node }) => (
+        <RecipeListing
+          key={node.frontmatter.slug}
+          title={node.frontmatter.title}
+          cook={node.frontmatter.author}
+          slug={node.frontmatter.slug}
+          description={node.frontmatter.description}
+        />
+      ))}
+    </IndexPageStyles>
   </Layout>
-)
+);
 
-export default IndexPage
+IndexPage.propTypes = {
+  data: PropTypes.object.isRequired,
+};
+
+export default IndexPage;
+
+export const query = graphql`
+  query recipes {
+    allMarkdownRemark(limit: 10) {
+      edges {
+        node {
+          frontmatter {
+            title
+            description
+            author
+            slug
+          }
+        }
+      }
+    }
+  }
+`;
