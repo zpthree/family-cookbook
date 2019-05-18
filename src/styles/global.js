@@ -30,6 +30,12 @@ html {
     color: #272727;
     background: #f1f1f1;
     font-family: 'Roboto', sans-serif;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+
+    @media print {
+      background: transparent;
+    }
   }
   
   main {
@@ -41,6 +47,16 @@ html {
     padding: 2rem 3rem;
     background: #fafafa;
     border-radius: 0 0 3px 3px;
+
+    @media print {
+      background: transparent;
+    }
+  }
+
+  footer {
+    @media print {
+      display: none;
+    }
   }
 
   h1 {
@@ -63,5 +79,14 @@ html {
 
   input,textarea,button {
     font-size: ${props => props.theme.fs4};
+  }
+
+  @media print {
+    @page {
+      padding: 0;
+      margin: 0 0 30px;
+      border: none;
+      border-collapse: collapse;
+    }
   }
 `;

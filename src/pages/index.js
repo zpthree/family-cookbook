@@ -5,8 +5,10 @@ import styled from 'styled-components';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import RecipeListing from '../components/recipeListing';
+import { MyContext } from '../components/context';
 import H1Gradient from '../styles/h1-gradient';
 import Separator from '../styles/separator';
+import Header from '../components/header';
 
 const IndexPageStyles = styled.div`
   h1 {
@@ -18,18 +20,33 @@ const IndexPageStyles = styled.div`
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
+    <Header />
     <IndexPageStyles>
       <H1Gradient>Family Recipes</H1Gradient>
       <Separator />
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-        <RecipeListing
-          key={node.frontmatter.slug}
-          title={node.frontmatter.title}
-          cook={node.frontmatter.author}
-          slug={node.frontmatter.slug}
-          description={node.frontmatter.description}
-        />
-      ))}
+      <MyContext.Consumer>
+        {({ search, results }) =>
+          search
+            ? results.map(node => (
+                <RecipeListing
+                  key={node.id}
+                  title={node.title}
+                  cook={node.author}
+                  slug={node.slug}
+                  description={node.description}
+                />
+              ))
+            : data.allMarkdownRemark.edges.map(({ node }) => (
+                <RecipeListing
+                  key={node.frontmatter.slug}
+                  title={node.frontmatter.title}
+                  cook={node.frontmatter.author}
+                  slug={node.frontmatter.slug}
+                  description={node.frontmatter.description}
+                />
+              ))
+        }
+      </MyContext.Consumer>
     </IndexPageStyles>
   </Layout>
 );

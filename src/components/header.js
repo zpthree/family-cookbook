@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { StaticQuery, graphql } from 'gatsby';
+import Search from './search';
 
 const HeaderStyles = styled.header`
   width: 100%;
@@ -8,6 +10,10 @@ const HeaderStyles = styled.header`
   height: 10rem;
   padding: 3rem;
   background: #fafafa;
+
+  @media print {
+    display: none;
+  }
 
   input {
     height: 4rem;
@@ -20,12 +26,20 @@ const HeaderStyles = styled.header`
 `;
 
 const Header = () => (
-  <HeaderStyles>
-    <input
-      type="text"
-      placeholder="Search for a recipe by title, creator, or meal type (breakfast, lunch, etc.)"
-    />
-  </HeaderStyles>
+  <StaticQuery
+    query={graphql`
+      query SearchIndexQuery {
+        siteSearchIndex {
+          index
+        }
+      }
+    `}
+    render={data => (
+      <HeaderStyles>
+        <Search searchIndex={data.siteSearchIndex.index} />
+      </HeaderStyles>
+    )}
+  />
 );
 
 export default Header;

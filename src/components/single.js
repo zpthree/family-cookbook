@@ -8,14 +8,24 @@ import H1Gradient from '../styles/h1-gradient';
 import Separator from '../styles/separator';
 
 const SingleStyles = styled.div`
+  .options {
+    @media print {
+      display: none;
+    }
+  }
+
   .options a {
     color: #272727;
     text-decoration: none;
     margin-right: 2.5rem;
   }
 
-  .options span {
+  .options button {
     color: #272727;
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
   }
 
   h1 {
@@ -38,14 +48,16 @@ const Single = ({ data }) => (
     <SingleStyles>
       <div className="options">
         <Link to="/">🏡 Go Home</Link>
-        <span>🖨️ Print</span>
+        <button type="button" onClick={() => window.print()}>
+          🖨️ Print
+        </button>
       </div>
       <H1Gradient>{data.markdownRemark.frontmatter.title}</H1Gradient>
       <p className="cook-name">{data.markdownRemark.frontmatter.author}</p>
       {data.markdownRemark.frontmatter.cookTime && (
         <p>⏲️ {data.markdownRemark.frontmatter.cookTime}</p>
       )}
-      <Separator />
+      <Separator mb="3rem" />
       <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
     </SingleStyles>
   </Layout>
