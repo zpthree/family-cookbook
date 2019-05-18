@@ -44,7 +44,7 @@ const SingleStyles = styled.div`
 
 const Single = ({ data }) => (
   <Layout>
-    <SEO />
+    <SEO title={data.markdownRemark.frontmatter.title} />
     <SingleStyles>
       <div className="options">
         <Link to="/">🏡 Go Home</Link>

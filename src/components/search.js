@@ -19,6 +19,7 @@ class Search extends Component {
       <MyContext.Consumer>
         {({ search, handleChange }) => (
           <input
+            id="search"
             type="text"
             value={search}
             placeholder="Search for a recipe by title, creator, or meal type (breakfast, lunch, etc.)"
