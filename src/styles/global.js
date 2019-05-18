@@ -29,6 +29,7 @@ html {
     font-size: ${props => props.theme.fs4};
     color: #272727;
     background: #f1f1f1;
+    font-family: 'Roboto', sans-serif;
   }
   
   main {
