@@ -40,6 +40,23 @@ const SingleStyles = styled.div`
     font-style: italic;
     ${props => props.theme.fs5};
   }
+
+  .recipe-content h2 {
+    font-size: ${props => props.theme.fs3};
+  }
+
+  .recipe-content h2:not(:first-child) {
+    margin-top: 3.5rem;
+  }
+
+  .recipe-content ul,
+  .recipe-content ol {
+    padding-left: 2rem;
+  }
+
+  .recipe-content li {
+    margin-bottom: 1rem;
+  }
 `;
 
 const Single = ({ data }) => (
@@ -58,7 +75,10 @@ const Single = ({ data }) => (
         <p>⏲️ {data.markdownRemark.frontmatter.cookTime}</p>
       )}
       <Separator mb="3rem" />
-      <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+      <div
+        className="recipe-content"
+        dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
+      />
     </SingleStyles>
   </Layout>
 );

@@ -5,7 +5,7 @@ author: "Grandma Geiger"
 description: "The best meatballs ever."
 tags: ['dinner', 'meat']
 ---
-## Meatballs ingredients
+## Meatball Ingredients
 
 - 2 eggs
 - 2 cups quick-cooking oats
