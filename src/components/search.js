@@ -22,7 +22,8 @@ class Search extends Component {
             id="search"
             type="text"
             value={search}
-            placeholder="Search for a recipe by title, creator, or meal type (breakfast, lunch, etc.)"
+            autoComplete="off"
+            placeholder="Search for a recipe by title, cook, or meal type (breakfast, lunch, etc.)"
             onChange={e => {
               const index = this.getOrCreateIndex();
               handleChange({

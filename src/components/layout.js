@@ -21,7 +21,15 @@ const Layout = ({ children }) => (
             color: `#848484`,
           }}
         >
-          Designed and developed by Zach Patrick
+          Designed and developed by{` `}
+          <a
+            href="https://twitter.com/zpthree"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: `#555` }}
+          >
+            Zach Patrick
+          </a>
         </footer>
       </>
     </ThemeProvider>

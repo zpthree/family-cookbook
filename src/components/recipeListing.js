@@ -13,7 +13,7 @@ const RecipeListingStyles = styled.article`
   }
 
   a {
-    color: #272727;
+    color: #393939;
     text-decoration: none;
   }
 

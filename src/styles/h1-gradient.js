@@ -8,7 +8,7 @@ const H1Gradient = styled.h1`
 
   @media print {
     background: none;
-    -webkit-text-fill-color: #272727;
+    -webkit-text-fill-color: #393939;
   }
 `;
 

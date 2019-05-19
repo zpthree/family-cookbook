@@ -1,8 +1,8 @@
 ---
-slug: "italian-meat-loaf"
+slug: "italian-meatloaf"
 title: "Italian Meatloaf"
 author: "Grandma Geiger"
-cookTime: "1 hr 40 minutes"
+cookTime: "1 hour 40 minutes"
 description: ""
 tags: ['dinner', 'meat']
 ---

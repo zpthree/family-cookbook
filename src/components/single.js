@@ -15,13 +15,13 @@ const SingleStyles = styled.div`
   }
 
   .options a {
-    color: #272727;
+    color: #393939;
     text-decoration: none;
     margin-right: 2.5rem;
   }
 
   .options button {
-    color: #272727;
+    color: #393939;
     outline: none;
     border: none;
     background: none;
@@ -29,8 +29,13 @@ const SingleStyles = styled.div`
   }
 
   h1 {
+    font-size: ${props => props.theme.fs2};
     margin-bottom: 0;
     padding: 0;
+
+    @media screen and (min-width: 768px) {
+      font-size: ${props => props.theme.fs1};
+    }
   }
 
   .cook-name {

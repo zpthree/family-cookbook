@@ -27,7 +27,7 @@ html {
 
   body {
     font-size: ${props => props.theme.fs4};
-    color: #272727;
+    color: #393939;
     background: #f1f1f1;
     font-family: 'Roboto', sans-serif;
     -webkit-print-color-adjust: exact;

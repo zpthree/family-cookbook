@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Family Recipe`,
     author: `@zpthree`,
+    siteUrl: `https://www.familyfood.recipes`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -25,11 +26,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `family-cookbook`,
+        short_name: `cookbook`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#ac24e1`,
+        theme_color: `#ac24e1`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
@@ -63,7 +64,10 @@ module.exports = {
         },
       },
     },
+    `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-offline`,
+    `gatsby-plugin-netlify`,
   ],
 };

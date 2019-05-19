@@ -59,7 +59,7 @@ export default IndexPage;
 
 export const query = graphql`
   query recipes {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { fields: frontmatter___title }) {
       edges {
         node {
           frontmatter {
