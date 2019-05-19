@@ -37,7 +37,7 @@ const RecipeListingStyles = styled.article`
 
 const RecipeListing = ({ title, cook, description, slug }) => (
   <RecipeListingStyles>
-    <Link to={`/recipe/${slug}`}>
+    <Link to={`/${slug}`}>
       <h2>{title}</h2>
       <p className="cook-name">{cook}</p>
       <p>{description}</p>

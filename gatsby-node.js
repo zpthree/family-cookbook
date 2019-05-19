@@ -19,7 +19,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   recipes.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
-      path: `/recipe/${node.frontmatter.slug}`,
+      path: `/${node.frontmatter.slug}`,
       component: path.resolve(`./src/components/single.js`),
       context: {
         slug: `${node.frontmatter.slug}`,

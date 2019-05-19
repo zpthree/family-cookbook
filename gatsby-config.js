@@ -26,8 +26,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `family-cookbook`,
-        short_name: `cookbook`,
+        name: `Family Cookbook`,
+        short_name: `Cookbook`,
         start_url: `/`,
         background_color: `#ac24e1`,
         theme_color: `#ac24e1`,
