@@ -25,11 +25,13 @@ const RecipeListingStyles = styled.article`
   .cook-name {
     color: #848484;
     margin-top: 0.5rem;
+    margin-bottom: 0;
     font-style: italic;
     ${props => props.theme.fs5};
   }
 
   p:not(.cook-name) {
+    margin-top: 1rem;
     letter-spacing: 0.15px;
     line-height: 1.4;
   }
