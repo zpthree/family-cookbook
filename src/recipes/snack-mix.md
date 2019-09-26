@@ -13,7 +13,7 @@ tags: ["snack"]
 
 ## Steps
 
-1. Get a big bold
+1. Get a big bowl
 2. Add Chex Mix
 3. Add M&M's
 4. Use those hands and mix that mix

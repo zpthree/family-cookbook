@@ -8,7 +8,7 @@ const HeaderStyles = styled.header`
   max-width: ${props => props.theme.maxWidth};
   margin: auto;
   height: 10rem;
-  padding: 3rem;
+  padding: 3rem 0;
   background: #fafafa;
 
   @media print {
@@ -22,6 +22,9 @@ const HeaderStyles = styled.header`
     border: none;
     background: #fafafa;
     border: 1px solid #e2e2e2;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
   }
 `;
 
