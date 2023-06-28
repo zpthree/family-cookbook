@@ -1,7 +1,6 @@
 ---
 slug: "snack-mix"
 title: "Snack Mix"
-author: "Zach Patrick"
 cookTime: "2 minutes"
 tags: ["snack"]
 ---
